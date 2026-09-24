@@ -1,0 +1,42 @@
+{
+  "id": "bremmort-session-init",
+  "title": "Bremmort Session Init",
+  "description": "Lightweight startup fixes for CSB/Bar Brawl attribute bar refresh and GM-only native playlist preload.",
+  "version": "1.0.0",
+  "manifest": "https://raw.githubusercontent.com/elesmondes-bremmort/bremmort-session-init/main/module.json",
+  "download": "https://github.com/elesmondes-bremmort/bremmort-session-init/archive/refs/heads/main.zip",
+  "authors": [
+    {
+      "name": "Bremmort"
+    }
+  ],
+  "scripts": [
+    "scripts/init.js"
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.365"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "custom-system-builder",
+        "type": "system",
+        "compatibility": {
+          "minimum": "6.0.0",
+          "verified": "6.0.2"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "id": "barbrawl",
+        "type": "module",
+        "compatibility": {
+          "minimum": "1.9.3",
+          "verified": "1.9.3"
+        }
+      }
+    ]
+  }
+}
