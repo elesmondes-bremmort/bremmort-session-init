@@ -12,7 +12,7 @@ const logger = {
 // ============================================================================
 
 const STATUS_ICON_RATIO = 0.30;
-const STATUS_COUNTER_FONT_RATIO = 0.80;
+const STATUS_COUNTER_FONT_RATIO = 0.70;
 
 
 // ============================================================================
@@ -517,6 +517,21 @@ function applyAdaptiveStatusLayout(
       iconSize *
       STATUS_COUNTER_FONT_RATIO
     );
+    /*
+    * Applique systématiquement la taille adaptative
+    * à tous les compteurs Status Icon Counters.
+    *
+    * Le mapping effet ↔ compteur reste utilisé ensuite
+    * uniquement pour leur positionnement.
+    */
+    for (const counter of counterTexts) {
+
+      if (counter?.style) {
+
+        counter.style.fontSize =
+          counterFontSize;
+      }
+    }
 
 
   // --------------------------------------------------------------------------
