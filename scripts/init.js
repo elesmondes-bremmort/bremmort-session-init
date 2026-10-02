@@ -461,8 +461,28 @@ function applyAdaptiveStatusLayout(
   // Dimensions
   // --------------------------------------------------------------------------
 
+  /*
+   * Largeur intrinsèque du token dans la grille.
+   *
+   * IMPORTANT :
+   * on n'utilise pas token.bounds.width.
+   *
+   * Les bounds PIXI peuvent être influencées/recalculées
+   * par les éléments graphiques autour du token, notamment
+   * les statuts que nous déplaçons hors de son portrait.
+   *
+   * document.width × grid.size reste au contraire stable :
+   * un token 4 cases reste toujours un token de 4 cases,
+   * quel que soit son nombre de statuts ou son refresh.
+   */
+
+  const gridSize =
+    canvas.grid?.size;
+
+
   const tokenWidth =
-    token.bounds.width;
+    token.document.width *
+    gridSize;
 
 
   if (
